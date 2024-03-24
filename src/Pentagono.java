@@ -6,7 +6,12 @@ public class Pentagono extends Figura {
         this.lado = lado;
     }
 
+    @Override
     public double area() {
-        return (lado * lado * Math.sqrt(25 + 10 * Math.sqrt(5))) / 4;
+        int nlados = 5;
+        double perimetro = nlados * lado;
+        double apotema = lado / (2 * Math.tan(Math.PI / nlados));
+        return 0.5 * perimetro * apotema;
     }
 }
+

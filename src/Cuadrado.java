@@ -6,6 +6,7 @@ public class Cuadrado extends Figura {
         this.lado = lado;
     }
 
+    @Override
     public double area() {
         return lado * lado;
     }
