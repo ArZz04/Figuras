@@ -19,9 +19,19 @@
           <img
             class="h-full w-full border border-white rounded-xl border-4"
             src="./resources/portada.jpeg"
-            alt
           />
+
         </article>
+
+          <div class="container w-1/3 p-4 text-center text-xl">
+              <h3 class="font-bold">NOMBRE:</h3>
+              <p>JUAN ALBERTO ARVIZU CASTILLO</p>
+              <h3 class="font-bold">SEMESTRE:</h3>
+              <p>2do Semestre</p>
+              <h3 class="font-bold">CARRERA:</h3>
+              <p>INGENIERIA EN SISTEMAS COMPUTACIONALES</p>
+          </div>
+
         <article
           class="container w-1/3 p-4 "
         >
@@ -119,18 +129,23 @@
                 <article id="enunciado" class="p-4 border border-white rounded-xl border-4">
                     <h2 class="text-2xl font-bold text-center">ENUNCIADO</h2>
                     <div class="p-10">
+                        <p>La problemática que se resuelve no representa una dificultad grave,
+                        sino más bien una oportunidad para desarrollar una herramienta de apoyo.
+                        </p>
                         <p>
-                            La problemática a resolver consiste en implementar una jerarquía
-                            de clases que representen diversas figuras geométricas,
-                            utilizando la clase abstracta Figura como clase base. Cada
-                            figura debe tener métodos para calcular su área y perímetro.
+                            Se busca implementar una jerarquía de clases que representen diversas figuras geométricas.
+                            Estas figuras geométricas, que incluyen círculos, cuadrados, triángulos, pentágonos,
+                            entre otras, deben depender de una clase base llamada Figura.
+                        </p>
+                        <p>
+                            Cada figura debe contar con métodos para calcular tanto su área como su perímetro.
                         </p>
                     </div>
                 </article>
 
                 <article id="diagrama-de-flujo" class="container p-4 border border-white rounded-xl border-4">
                     <h2 class="text-2xl font-bold text-center">DIAGRAMA DE FLUJO</h2>
-                    <!-- Contenido del diagrama de flujo -->
+                    <!-- Diagrama de flujo -->
                 </article>
 
                 <article id="diagrama-de-clase" class="container p-4 border border-white rounded-xl border-4 max-w-full md:max-w-4xl">
@@ -142,10 +157,26 @@
                 </article>
 
 
-
                 <article id="pruebas-funcionales" class="container p-4 border border-white rounded-xl border-4">
-                    <h2 class="text-2xl font-bold text-center">PRUEBAS FUNCIONALES</h2>
-                    <!-- Contenido de las pruebas funcionales -->
+                    <h2 class="text-2xl font-bold text-center pb-10">PRUEBAS FUNCIONALES</h2>
+                    <div class="relative ">
+                        <div class="carousel-inner w-full h-full flex justify-center">
+                            <div class="carousel-item absolute opacity-1 flex justify-center items-center">
+                                <img src="./resources/PF1.png" class="h-full max-w-80 object-contain" alt="Slide 1">
+                            </div>
+                            <div class="carousel-item absolute opacity-0 flex justify-center items-center">
+                                <img src="./resources/PF2.png" class="h-full max-w-80 object-contain" alt="Slide 2">
+                            </div>
+                            <div class="carousel-item absolute opacity-0 flex justify-center items-center">
+                                <img src="./resources/PF3.png" class="h-full max-w-80 object-contain" alt="Slide 3">
+                            </div>
+                            <div class="carousel-item absolute opacity-0 flex justify-center items-center">
+                                <img src="./resources/PF4.png" class="h-full max-w-80 object-contain" alt="Slide 4">
+                            </div>
+                        </div>
+                        <a class="absolute w-10 h-10 bg-gray-800 flex items-center justify-center rounded-full -left-1 transform -translate-y-1/2 cursor-pointer z-10 text-white" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="absolute w-10 h-10 bg-gray-800 flex items-center justify-center rounded-full -right-1 transform -translate-y-1/2 cursor-pointer z-10 text-white" onclick="plusSlides(1)">&#10095;</a>
+                    </div>
                 </article>
             </div>
 
@@ -385,5 +416,28 @@
         </div>
       </div>
     </main>
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("carousel-item");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.opacity = "0";
+            }
+            slides[slideIndex-1].style.opacity = "1";
+        }
+    </script>
   </body>
 </html>
